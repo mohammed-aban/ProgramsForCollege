@@ -7,7 +7,7 @@ int main() {
 
     // Entering the source file path
     printf("Enter the source file path: ");
-    scanf("&s", sourcePath);
+    scanf("%s", sourcePath);
 
     // Entering the target file path
     printf("Enter the target file path: ");
@@ -31,9 +31,12 @@ int main() {
     }
 
     // Copy contents from source file to target file
-    while (letter = fgetc(sourceFile) != EOF) {
+    while ((letter = fgetc(sourceFile)) != EOF) {
         fputc(letter, targetFile);
     }
+
+    fclose(sourceFile);
+    fclose(targetFile);
 
     printf("File opened successfully.");
 

@@ -23,7 +23,6 @@ public class TopologicalSorting {
         for (int i = 0; i < n; i++) {
 
             calculate();
-
             int j;
 
             for (j = 0; j < n; j++) {
@@ -32,7 +31,7 @@ public class TopologicalSorting {
             }
 
             if (j == n) {
-                System.out.print("Graph is cyclic, so no solution.");
+                System.out.println("Graph is cyclic, so no solution.");
                 return;
             }
 

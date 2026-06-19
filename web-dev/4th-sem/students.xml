@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="style.css"?>
+
+<students>
+
+    <student>
+        <usn>1MS23CS107</usn>
+        <name>Aban</name>
+        <college>ABC Engineering College</college>
+        <branch>CSE</branch>
+        <year>2026</year>
+        <email>aban@gmail.com</email>
+    </student>
+    <student>
+        <usn>1MS23CS002</usn>
+        <name>Rahul</name>
+        <college>ABC Engineering College</college>
+        <branch>ISE</branch>
+        <year>2026</year>
+        <email>rahul@gmail.com</email>
+    </student>
+
+    <student>
+        <usn>1MS23CS003</usn>
+        <name>Priya</name>
+        <college>ABC Engineering College</college>
+        <branch>ECE</branch>
+        <year>2026</year>
+        <email>priya@gmail.com</email>
+    </student>
+
+</students>

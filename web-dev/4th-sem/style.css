@@ -1,0 +1,30 @@
+students
+{
+    display:block;
+    font-family:Arial;
+    background-color:#f2f2f2;
+    padding:20px;
+}
+
+student
+{
+    display:block;
+    border:2px solid black;
+    background:white;
+    margin:15px;
+    padding:15px;
+}
+
+usn,name,college,branch,year,email
+{
+    display:block;
+    margin:5px;
+    font-size:18px;
+}
+
+name
+{
+    color:blue;
+    font-weight:bold;
+    font-size:22px;
+}

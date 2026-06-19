@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX PROGRAM</title>
+    <script src="jQuery.js"></script>
+</head>
+
+<body>
+    <h2>Lab 9 AJAX Demonstration</h2>
+    <hr>
+    <h3>Part A : Load text using XMLHttp Request (Plain JavaScript)</h3>
+    <button onclick="loadTextJS()">Load Text (Plain JS)</button>
+    <p id="text-output-js">Text Will Appear here..</p>
+    <script>
+        function loadTextJS() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "data.txt", true);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("text-output-js").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+    <hr>
+    <h3>Part B : Load text using JQuery $.ajax()</h3>
+    <button onclick="loadTextJQuery()">Load Text(jQuery)</button>
+    <p id="text-output-jquery">Text will appear here....</p>
+    <script>
+        function loadTextJQuery() {
+            $.ajax({
+                url: "data.txt",
+                type: "GET",
+                success: (data) => {
+                    $("#text-output-jquery").html(data);
+                },
+                error: () => {
+                    $("#text-output-jquery").html("Error loading file");
+                }
+            });
+        }
+    </script>
+    <hr>
+    <h3>Part C : Load JSON using jQuery getJSON()</h3>
+
+    <button onclick="loadJSON()">Load JSON (jQuery)</button>
+    <div id="json-output-jquery" style="margin-top: 20px;">JSON data will appear here... </div>
+    <script>
+        function loadJSON() {
+            $.getJSON("data.json", function (data) {
+                let result =
+                    "Name: " + data.name + "<br>" +
+                    "Age: " + data.age + "<br>" +
+                    "Branch: " + data.branch + "<br>" +
+                    "College: " + data.college;
+                $("#json-output-jquery").html(result);
+            });
+        }
+    </script>
+    <hr>
+    <h3>Part D: Parse JSON string using JavaScript parse JSON()</h3>
+    <button onclick="parseJSONData()">Parse JSON String</button>
+    <div id="json-onclick-parse">Parsed data will appear here....</div>
+    <script>
+        function parseJSONData() {
+            let jsonString = '{"name":"Alice","age":22,"branch":"CSE","college":"CiTech"}';
+            let obj = JSON.parse(jsonString);
+            let result =
+                "Name: " + obj.name + "<br>" +
+                "Age: " + obj.age + "<br>" +
+                "Branch: " + obj.branch + "<br>" +
+                "College: " + obj.college;
+            document.getElementById("json-onclick-parse").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
